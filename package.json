@@ -17,7 +17,11 @@
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
-    "start:dev": "nodemon --exec babel-node ./src/app.js"
+    "start:dev": "nodemon --exec babel-node ./server/app.js",
+    "start": "node --require babel-polyfill ./build/app.js",
+    "clean": "rm -rf ./build && mkdir build",
+    "build": "yarn run clean && babel -d build ./server",
+    "heroku-postbuild": "npm run build"
   },
   "author": {
     "name": "Build For SDG",

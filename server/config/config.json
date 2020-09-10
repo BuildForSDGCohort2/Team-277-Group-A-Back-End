@@ -1,18 +1,21 @@
 {
   "development": {
     "username": "postgres",
-    "password": "ikongbeh28",
-    "database": "better-health-dev",
+    "password": "yourPassword",
+    "database": "dbname",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "ikongbeh28",
-    "database": "better-health-test",
+    "password": "yourPassword",
+    "database": "dbname",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL"
   }
 }

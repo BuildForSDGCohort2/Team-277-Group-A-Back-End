@@ -1,7 +1,3 @@
-
-// eslint-disable-next-line no-unused-expressions
-
-
 module.exports = (sequelize, DataTypes) => {
   const Doctor = sequelize.define('Doctor', {
     id: {

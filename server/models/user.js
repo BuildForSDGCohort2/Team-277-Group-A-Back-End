@@ -1,8 +1,4 @@
-/* eslint-disable no-param-reassign */
 import bcrypt from 'bcrypt';
-
-// eslint-disable-next-line no-unused-expressions
-'use strict';
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
