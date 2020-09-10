@@ -37,7 +37,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
     "@babel/node": "^7.10.5",
+    "babel-cli": "^6.26.0",
     "babel-node": "^0.0.1-security",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
@@ -50,7 +52,7 @@
     "sequelize-test-helpers": "^1.2.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.9.5",
     "babel-jest": "^25.4.0",
     "chai": "^4.2.0",
