@@ -9,9 +9,7 @@ module.exports = {
       }
     )
   ]),
-
-  // eslint-disable-next-line no-unused-vars
-  down: (queryInterface, Sequelize) => Promise.all([
+  down: (queryInterface) => Promise.all([
     queryInterface.removeColumn('Users', 'sex')
   ])
 };

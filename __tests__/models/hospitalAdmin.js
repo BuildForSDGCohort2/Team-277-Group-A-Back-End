@@ -1,4 +1,3 @@
-
 import {
   sequelize,
   dataTypes,
