@@ -16,12 +16,13 @@
     "test": "cross-env NODE_ENV=test sequelize db:migrate:undo:all && cross-env NODE_ENV=test sequelize db:migrate && cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
-    "lint": "eslint \"src/**/*.js\"",
+    "lint": "eslint \"server/**/*.js\"",
     "start:dev": "nodemon --exec babel-node ./server/app.js",
     "start": "node --require babel-polyfill ./build/app.js",
-    "clean": "rm -rf ./build && mkdir build",
-    "build": "yarn run clean && babel -d build ./server",
-    "heroku-postbuild": "npm run build"
+    "clean": "rmdir /s /q build && mkdir build",
+    "build": "babel ./server -d build",
+    "migration": "npx sequelize-cli db:migrate",
+    "heroku-postbuild": "yarn run build && yarn run migration"
   },
   "author": {
     "name": "Build For SDG",
@@ -39,8 +40,11 @@
   "dependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/node": "^7.10.5",
-    "babel-cli": "^6.26.0",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/runtime": "^7.11.2",
     "babel-node": "^0.0.1-security",
+    "babel-polyfill": "^6.26.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cross-env": "^7.0.2",
@@ -52,8 +56,8 @@
     "sequelize-test-helpers": "^1.2.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.11.5",
     "babel-jest": "^25.4.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",

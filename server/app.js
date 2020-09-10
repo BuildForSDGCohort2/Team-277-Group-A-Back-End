@@ -1,7 +1,6 @@
-// const app = async () => '#BuildforSDG';
-
 import express from 'express';
 import bodyParser from 'body-parser';
+import '@babel/polyfill';
 
 const app = express();
 
