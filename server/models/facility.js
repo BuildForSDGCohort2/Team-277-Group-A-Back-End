@@ -22,8 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     }
   });
-
-
   Facility.associate = (models) => {
     Facility.belongsTo(models.Hospital, {
       foreignKey: 'hospitalId',
@@ -32,6 +30,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
   };
-
   return Facility;
 };

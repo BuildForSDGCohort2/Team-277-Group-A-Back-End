@@ -14,8 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
-
   Doctor.associate = (models) => {
     Doctor.belongsTo(models.User, {
       foreignKey: 'userId',
@@ -51,6 +49,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
   };
-
   return Doctor;
 };

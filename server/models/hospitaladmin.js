@@ -14,8 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
-
   HospitalAdmin.associate = (models) => {
     HospitalAdmin.belongsto(models.User, {
       foreignKey: 'userId',
@@ -28,6 +26,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
   };
-
   return HospitalAdmin;
 };

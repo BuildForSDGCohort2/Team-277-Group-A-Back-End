@@ -40,8 +40,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
-
   Consultation.associate = (models) => {
     Consultation.belongsTo(models.User, {
       foreignKey: 'userId',

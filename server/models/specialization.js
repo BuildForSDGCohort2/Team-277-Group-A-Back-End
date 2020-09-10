@@ -14,8 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
-
   Specialization.associate = (models) => {
     Specialization.belongstoMany(models.Doctor, {
       through: 'doctorSpecialization',
@@ -24,6 +22,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
   };
-
   return Specialization;
 };

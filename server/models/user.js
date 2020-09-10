@@ -60,7 +60,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
   /**
    * compares if the passed arguments are equal
    * @param {string} password
@@ -68,7 +67,6 @@ module.exports = (sequelize, DataTypes) => {
    * @returns {boolean} true or false
    */
   User.prototype.comparePassword = (password, user) => bcrypt.compareSync(password, user.password);
-
   /**
    * encrypt a user's password
    * @param {string} password
@@ -76,14 +74,9 @@ module.exports = (sequelize, DataTypes) => {
    *
    */
   User.prototype.encryptPassword = (password) => bcrypt.hashSync(password, bcrypt.genSaltSync(6));
-
   User.beforeCreate((user) => {
     user.password = user.encryptPassword(user.password);
   });
-  // User.beforeUpdate((user) => {
-  //   user.password = user.encryptPassword(user.password);
-  // });
-
   User.associate = (models) => {
     // associations can be defined here
     User.hasMany(models.Appointment, {

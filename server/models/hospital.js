@@ -15,8 +15,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     }
   });
-
-
   Hospital.associate = (models) => {
     Hospital.hasMany(models.Facility, {
       foreignKey: 'hospitalId',
@@ -52,6 +50,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
   };
-
   return Hospital;
 };

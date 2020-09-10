@@ -61,10 +61,7 @@ module.exports = (sequelize, DataTypes) => {
         isUUID: 4
       }
     }
-
   });
-
-
   Appointment.associate = (models) => {
     Appointment.belongsTo(models.User, {
       foreignKey: 'userId',

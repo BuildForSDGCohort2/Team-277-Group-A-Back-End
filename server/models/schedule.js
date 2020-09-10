@@ -21,8 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
-
   Schedule.associate = (models) => {
     Schedule.belongsto(models.Doctor, {
       foreignKey: 'userId',
@@ -35,6 +33,5 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'CASCADE'
     });
   };
-
   return Schedule;
 };
