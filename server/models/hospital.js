@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       target: 'id',
       onDelete: 'CASCADE'
     });
-    Hospital.belongstoMany(models.Doctor, {
+    Hospital.belongsToMany(models.Doctor, {
       through: 'doctorHospital'
     });
     Hospital.hasMany(models.Consultation, {

@@ -7,3 +7,4 @@ import './models/schedule';
 import './models/hospital';
 import './models/hospitalAdmin';
 import './models/specialization';
+import './controllers/userContollers';

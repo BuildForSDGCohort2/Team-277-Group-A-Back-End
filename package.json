@@ -13,7 +13,7 @@
     "test": "__tests__"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test sequelize db:migrate:undo:all && cross-env NODE_ENV=test sequelize db:migrate && cross-env NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test sequelize db:migrate:undo:all && cross-env NODE_ENV=test sequelize db:migrate && cross-env NODE_ENV=test jest --detectOpenHandles",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:cover": "cross-env NODE_ENV=test jest --coverage",
     "lint": "eslint \"server/**/*.js\"",
@@ -47,8 +47,12 @@
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
     "mocha": "^8.1.3",
     "parcel-bundler": "^1.12.4",
     "pg": "^8.3.3",

@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   Specialization.associate = (models) => {
-    Specialization.belongstoMany(models.Doctor, {
+    Specialization.belongsToMany(models.Doctor, {
       through: 'doctorSpecialization',
-      foreignKey: 'specializationId',
+      foreignKey: 'specialization',
       target: 'id',
       onDelete: 'CASCADE'
     });
