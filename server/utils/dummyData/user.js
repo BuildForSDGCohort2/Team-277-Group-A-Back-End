@@ -12,7 +12,6 @@ export const emptyUser = {
   password: ''
 };
 
-
 export const wrongUser = {
   email: 'users@gmail.com',
   password: 'passwords'

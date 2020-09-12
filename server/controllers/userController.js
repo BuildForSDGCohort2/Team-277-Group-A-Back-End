@@ -6,9 +6,7 @@ const util = new Util();
 
 class UserController {
   static async registerUser(req, res) {
-    const {
-      firstName, lastName, email, password, sex, dateOfBirth, address, phoneNumber
-    } = req.body;
+    const { firstName, lastName, email, password, sex, dateOfBirth, address, phoneNumber } = req.body;
     const newUser = {
       firstName, lastName, email, password, sex, dateOfBirth, address, phoneNumber
     };
