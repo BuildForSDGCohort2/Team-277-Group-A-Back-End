@@ -19,7 +19,7 @@
     "lint": "eslint \"server/**/*.js\"",
     "start:dev": "nodemon --exec babel-node ./server/app.js",
     "start": "node --require babel-polyfill ./build/app.js",
-    "clean": "rmdir /s /q build && mkdir build",
+    "clean": "rm -rf ./build && mkdir build",
     "build": "babel ./server -d build",
     "migration": "npx sequelize-cli db:migrate",
     "heroku-postbuild": "yarn run build && yarn run migration"

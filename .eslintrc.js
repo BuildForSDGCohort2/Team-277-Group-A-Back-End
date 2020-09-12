@@ -16,6 +16,9 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'prefer-destructuring': ['error', { object: false, array: false }],
+    'global-require': 0,
+    'import/no-dynamic-require': 0,
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }]
   }
