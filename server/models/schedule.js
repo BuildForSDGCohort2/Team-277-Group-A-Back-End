@@ -22,12 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   Schedule.associate = (models) => {
-    Schedule.belongsto(models.Doctor, {
+    Schedule.belongsTo(models.Doctor, {
       foreignKey: 'userId',
       as: 'user',
       onDelete: 'CASCADE'
     });
-    Schedule.belongsto(models.Hospital, {
+    Schedule.belongsTo(models.Hospital, {
       foreignKey: 'hospitalId',
       as: 'hospital',
       onDelete: 'CASCADE'

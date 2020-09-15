@@ -51,6 +51,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     dateOfBirth: {
       type: DataTypes.DATE
+    },
+    hospitalId: {
+      type: DataTypes.UUID,
+      allowNull: true,
+      validate: {
+        isUUID: 4
+      }
     }
   }, {
     timestamps: false,
@@ -81,7 +88,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     User.hasMany(models.Appointment, {
       foreignKey: 'userId',
-      as: 'appointment',
+      as: 'userAppointment',
       onDelete: 'CASCADE'
     });
     User.hasMany(models.Consultation, {
@@ -89,15 +96,15 @@ module.exports = (sequelize, DataTypes) => {
       as: 'appointment',
       onDelete: 'CASCADE'
     });
-    User.belongstoMany(models.Doctor, {
+    User.belongsToMany(models.Doctor, {
       through: 'doctorUser'
     });
-    User.belongstoMany(models.Hospital, {
+    User.belongsToMany(models.Hospital, {
       through: 'hospitalUser'
     });
     User.hasOne(models.HospitalAdmin, {
       foreignKey: 'userId',
-      as: 'profile',
+      as: 'admin',
       onDelete: 'CASCADE'
     });
   };

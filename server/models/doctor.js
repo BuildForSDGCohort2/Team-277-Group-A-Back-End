@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       target: 'id',
       onDelete: 'CASCADE'
     });
-    Doctor.belongstoMany(models.Hospital, {
+    Doctor.belongsToMany(models.Hospital, {
       through: 'doctorHospital',
       foreignKey: 'doctorId',
       target: 'id',
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'doctorId',
       onDelete: 'CASCADE'
     });
-    Doctor.belongstoMany(models.Specialization, {
+    Doctor.belongsToMany(models.Specialization, {
       through: 'doctorSpecialization',
       foreignKey: 'doctorId',
       target: 'id',

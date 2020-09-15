@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   HospitalAdmin.associate = (models) => {
-    HospitalAdmin.belongsto(models.User, {
+    HospitalAdmin.belongsTo(models.User, {
       foreignKey: 'userId',
       as: 'user',
       onDelete: 'CASCADE'
     });
-    HospitalAdmin.belongsto(models.Hospital, {
+    HospitalAdmin.belongsTo(models.Hospital, {
       foreignKey: 'hospitalId',
       as: 'hospital',
       onDelete: 'CASCADE'
